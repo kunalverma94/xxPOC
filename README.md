@@ -1,4 +1,4 @@
-# POC
+# POC:Proof Of Concept
 Feed-products: POC
 
 Proof of Concept:
@@ -28,7 +28,8 @@ the Code could have been further disperced and coaresed But that may have been t
 considering the initial commit for app
  
 
-Installation
+#Installation 
+ #Please follow the video in the repo for installaion and used the link below for .net core environment
  
 Windows
 https://dotnet.microsoft.com/download
@@ -38,6 +39,7 @@ Linux
 https://docs.microsoft.com/en-us/dotnet/core/install/linux
 
 Please add the executable to the OS Environment  for CLI
+
 
 
 

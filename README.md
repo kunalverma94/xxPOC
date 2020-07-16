@@ -32,11 +32,15 @@ considering the initial commit for app
  #Please follow the video in the repo for installaion and used the link below for .net core environment
  
  vido:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
+ 
+ 
 Windows
+
 https://dotnet.microsoft.com/download
 
 
 Linux
+
 https://docs.microsoft.com/en-us/dotnet/core/install/linux
 
 Please add the executable to the OS Environment  for CLI

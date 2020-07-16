@@ -6,6 +6,6 @@ namespace ConsoleApp4.DataProvider
     public class WebReader : IReader
     {
         /// <inheritdoc/>
-        public string ReadData(string location) => new WebClient().DownloadString(location);
+        public string Read(string location) => new WebClient().DownloadString(location);
     }
 }

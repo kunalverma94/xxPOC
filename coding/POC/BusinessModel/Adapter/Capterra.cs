@@ -4,11 +4,15 @@ using System.Collections.Generic;
 
 namespace ConsoleApp4.Models.DTO.Adapter
 {
-    public class CapterraAadpter : BaseClient, IClient
+    /// <summary>
+    /// Provide common IProducts implementaiton and properties resolving Business capabilities 
+    /// </summary>
+    public class Capterra : BaseProduct, IProducts
     {
-        private readonly ICapterra _provider;
+        private readonly ICapterraDTO _provider;
         private const string seperator = AppSetting.SEPERATOR;
 
+        ///<inheritdoc/>
         public override string Name
         {
             get
@@ -16,6 +20,8 @@ namespace ConsoleApp4.Models.DTO.Adapter
                 return _provider.name;
             }
         }
+
+        ///<inheritdoc/>
         public override string Twitter
         {
             get
@@ -23,6 +29,8 @@ namespace ConsoleApp4.Models.DTO.Adapter
                 return _provider.twitter;
             }
         }
+
+        ///<inheritdoc/>
         public override IEnumerable<string> Categories
         {
             get
@@ -30,7 +38,9 @@ namespace ConsoleApp4.Models.DTO.Adapter
                 return _provider.tags?.Split(seperator);
             }
         }
-        public CapterraAadpter(ICapterra provider)
+
+        ///<inheritdoc/>
+        public Capterra(ICapterraDTO provider)
         {
             _provider = provider;
 

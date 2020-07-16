@@ -1,8 +1,9 @@
-﻿using System.Text.Json;
+﻿using Newtonsoft.Json.Linq;
+using System.Text.Json;
 namespace ConsoleApp4.Providerrs
 {
     /// <inheritdoc/>
-    public class JSONSerializer : ISerializer
+    public class JSONSerializer : IProductSerializer
     {
 
         private readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
@@ -14,7 +15,7 @@ namespace ConsoleApp4.Providerrs
         public T GetObject<T>(string data)
         {
 
-            return JsonSerializer.Deserialize<T>(data, jsonSerializerOptions);
+            return JObject.Parse(data).ToObject<T>();
 
         }
     }

@@ -3,7 +3,7 @@
     /// <summary>
     /// Yep thats the benifit of interface ,,,,,
     /// </summary>
-    public interface ISerializer
+    public interface IProductSerializer
     {
         /// <summary>
         /// Get genetric obj

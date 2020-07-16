@@ -4,14 +4,19 @@ using System.Collections.Generic;
 
 namespace ConsoleApp4.Models.DTO.Adapter
 {
-    public class SoftwareAdviceAadpter : BaseClient, IClient
+    /// <summary>
+    /// Provide common IProducts implementaito and properties resolving Business capabilities 
+    /// </summary>
+    public class SoftwareAdvice : BaseProduct, IProducts
     {
-        private readonly ISoftwareAdvice _provider;
-        public SoftwareAdviceAadpter(ISoftwareAdvice softwareAdviceProvider)
+        private readonly ISoftwareAdviceDTO _provider;
+        public SoftwareAdvice(ISoftwareAdviceDTO softwareAdviceProvider)
         {
             _provider = softwareAdviceProvider;
 
         }
+
+        ///<inheritdoc/>
         public override string Name
         {
             get
@@ -20,6 +25,8 @@ namespace ConsoleApp4.Models.DTO.Adapter
             }
         }
 
+        ///<inheritdoc/>
+
         public override string Twitter
         {
             get
@@ -27,6 +34,8 @@ namespace ConsoleApp4.Models.DTO.Adapter
                 return _provider.Twitter;
             }
         }
+
+        ///<inheritdoc/>
         public override IEnumerable<string> Categories
         {
             get

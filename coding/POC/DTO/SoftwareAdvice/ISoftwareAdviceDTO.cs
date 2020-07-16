@@ -2,7 +2,7 @@
 
 namespace ConsoleApp4.DTO.SoftwareAdvice
 {
-    public class SoftwareAdvice : ISoftwareAdvice
+    public interface ISoftwareAdviceDTO
     {
         public IEnumerable<string> Categories { get; set; }
         public string Title { get; set; }

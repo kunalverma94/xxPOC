@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp4.DTO.Capterra
 {
-    public class Capterra : ICapterra
+    public class CapterraDTO : ICapterraDTO
     {
         public string tags { get; set; }
         public string name { get; set; }

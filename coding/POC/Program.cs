@@ -1,31 +1,33 @@
-﻿namespace ConsoleApp4
+﻿using ConsoleApp4.Models;
+using ConsoleApp4.Models.DTO.Request;
+using ConsoleApp4.Providers;
+using System;
+using System.Linq;
+
+namespace ConsoleApp4
 {
-    using ConsoleApp4.Models;
-    using ConsoleApp4.Models.DTO.Request;
-    using ConsoleApp4.Providers;
-    using System;
-
-
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            //For Test Run
             // args = new string[] { "Capterra", "feed-products/capterra.yaml" };
-            //args = new string[] { "softwareadvice", "feed-products/softwareadvice.json" };
+            // args = new string[] { "softwareadvice", "feed-products/softwareadvice.json" };
 
             try
             {
-                IRequestContext requestContext = RequestContext.GetRequest(args);
+                IRequest request = Request.GetRequest(args);
+                IBaseService service = AppFactory.AppFactoryInstance(request);
 
-                IProductProvider client = ProductProviderFactory.GetProductProvider(requestContext);
-
-                client.StartImporting();
+                service.GetProducts()
+                    .ToList()
+                    .ForEach(a => a.BeginImport());
             }
             catch (Exception)
             {
                 Console.WriteLine(AppSetting.HELPTEXT);
             }
         }
+
+
     }
 }

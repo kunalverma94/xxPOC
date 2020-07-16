@@ -4,7 +4,7 @@ using YamlDotNet.Serialization;
 namespace ConsoleApp4.Providerrs
 {
     /// <inheritdoc/>
-    public class YMLSerializer : ISerializer
+    public class YAMLSerializer : IProductSerializer
     {
         /// <inheritdoc/>
         public T GetObject<T>(string data)

@@ -10,12 +10,12 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static ISerializer GetSerializer(FileType type)
+        public static IProductSerializer GetSerializer(FileType type)
         {
             switch (type)
             {
                 case FileType.YAML:
-                return new YMLSerializer();
+                return new YAMLSerializer();
                 case FileType.JSON:
                 return new JSONSerializer();
                 case FileType.CSV:

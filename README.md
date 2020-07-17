@@ -1,74 +1,131 @@
 # POC:Proof Of Concept
 Feed-products: POC
 
-Please contact for futher suggestions and improvement :
+#SQL Solution
 
-Kunal Verma
-8329586462
-kunalverma94@yahoo.com
-Visit :http://kunalverma94.github.io/
+https://raw.githubusercontent.com/kunalverma94/POC/master/database/POCanswer.sql
 
 
-#Proof of Concept:
-The application is made in .net Core 3.1.
-For Maintainability and Scalability following design  patterns SOLID principals have been added:
-1.	Factory Pattern
-2.	Builder Pattern
-3. Adapter Pattern
-5.	Repository Like Pattern
-6. Dependency INjection (IOC)
-7. Further distributed of DTO ,modules into NuGet or standard DLL could be done ..Limited by Time.
-though such a simple functionality could be implemented in  coople of lines ,
+# Prerequisites
 
-EG :(https://www.nuget.org/packages/ConsoleTimeOutReader/)
+![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)
 
--But this initial investment provide long maintaiable  code.
+Syntax
+>  poc <SITE> <PRODUCT_CATALOG>
+            <SITE> := INVALID,Capterra,SoftwareAdvice
+            <PRODUCT_CATALOG> :=Valid file Location
+            Incase Of Absolute Path please provire with " <Path To file > "
 
--App is deveoped in such a way that provides proper absraction and singularity
+•	.Net Core 3.1 Setup and Installation : Please Make sure .net Core  is installed on system , used the link below for .net core environment as per the O.S
+     
+     o	Linux: Follow instructions here   https://docs.microsoft.com/en-us/dotnet/core/install/linux
+     o	Windows : https://dotnet.microsoft.com/download
 
--All the products are provided as an IProduct ineerface .An adapter class provides necessary mapping for all.
-the enduser may experience all products as single type
-
--The Data Provider and Data I/O  modues are properly sepereated
-
--Proper patterns used to avoid and hard binding or dependency.
-
--The Code could have been further disperced and coaresed But that may have been too much 
-considering the initial commit for app
- 
- -Implemented IOC
- 
- -employed MOQ for testing support
 
 # Installation 
-
- #Please follow the video in the repo for installaion
-
- #video Instructions/Demo
  
- video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
+ • Build the solution. 
  
+ • \bin\Debug\netcoreapp3.1\
  
-# Please Make sure .net Core  is installed on system , used the link below for .net core environment as per the O.S
+ • Add path to executable to system variable 
+
+#Hot To Run
+ 
+ -Demo
+ -![Run](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img2.jpg)
+ 
+ -video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
+ 
+#Proof of Concept:
+
+The application developed in .net Core 3.1.
+
+For Maintainability and Scalability following design  patterns SOLID principals have been added as Of current Implementation
+
+1.	Factory Pattern
+
+2.	Builder Pattern
+
+3.	Adapter Pattern
+
+4.	Repository Like Pattern
+
+5.	Dependency Injection (IOC)
+
+Further Development May involve:
+
+1.	Distributed of DTO ,modules into NuGet or standard DLL .
+
+2.	More level of abstract or modularity could be implemented .
+
+3.	Adding Comments and Summary Tags for more readability.
+
+4.	Automation 
+
+5.	CLI commands enrichment
+
+6.	Providing more flags like
+
+a.	–source : Web, local, sql, network
 
 
-Windows
 
-https://dotnet.microsoft.com/download
+Features:
+
+•	NO strong Dependency: 
+
+o	Interface backs all the models.
+
+o	Makes unit and Module testability easy.
+
+o	Implementation guidelines
+
+o	The comments could be added only in the interface and are reflected by inherit doc supplying more readability .
+
+•	Abstraction:
 
 
-Linux
+o	The products are modeled into an instance Of IProduct .
 
-https://docs.microsoft.com/en-us/dotnet/core/install/linux
+o	An Adapter pattern ensures for providing all IProducts with same level of business maturity.
 
-Please add the executable to the OS Environment  for CLI.
+•	IOC : Dependency Injection
 
-Please follow video for installation
-![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)
+o	Supplies Lean and clean way of initialization and injection of instances.
+
+•	MOQ :
+
+o	Testing and Mocking done using MOQ library for testability
+
+•	Modularity:
+
+o	3  level
+
+	Service Layer
+
+	Data Layer
+
+	Reader Layer (lower level  dealing with files, networks and stuff)
+
+•	Tries to Support  “O” For open close
+
+o	Provided as much implementation and separation  for addition of new provide, source, and products service.
+
+•	All the basic appsetting and const variables provided in Appsetting static class To avoided and encourage placing all const fields ,to avoid bugs and redundancy.
 
 
 #
 
+Please contact for futher suggestions and improvement :
+
+Kunal Verma
+
+8329586462
+
+kunalverma94@yahoo.com
+
+Visit :http://kunalverma94.github.io/
 
 
 

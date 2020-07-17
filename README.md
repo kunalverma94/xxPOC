@@ -1,6 +1,12 @@
 # POC:Proof Of Concept
 Feed-products: POC
 
+Please contact for futher suggestions and improvement :
+
+Kunal Verma
+8329586462
+kunalverma94@yahoo.com
+Visit :http://kunalverma94.github.io/
 
 
 #Proof of Concept:
@@ -11,8 +17,10 @@ For Maintainability and Scalability following design  patterns SOLID principals 
 3. Adapter Pattern
 5.	Repository Like Pattern
 6. Dependency INjection (IOC)
-Further distributed of DTO ,modules into NuGet or standard DLL could be done ..Limited by Time.
+7. Further distributed of DTO ,modules into NuGet or standard DLL could be done ..Limited by Time.
 though such a simple functionality could be implemented in  coople of lines ,
+
+EG :(https://www.nuget.org/packages/ConsoleTimeOutReader/)
 
 -But this initial investment provide long maintaiable  code.
 
@@ -34,14 +42,16 @@ considering the initial commit for app
 
 # Installation 
 
- #Please follow the video in the repo for installaion and used the link below for .net core environment
+ #Please follow the video in the repo for installaion
 
  #video Instructions/Demo
  
  video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
  
  
- 
+# Please Make sure .net Core  is installed on system , used the link below for .net core environment as per the O.S
+
+
 Windows
 
 https://dotnet.microsoft.com/download
@@ -53,7 +63,7 @@ https://docs.microsoft.com/en-us/dotnet/core/install/linux
 
 Please add the executable to the OS Environment  for CLI.
 
-Please follow vide for installation
+Please follow video for installation
 ![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)
 
 

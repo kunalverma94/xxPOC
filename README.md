@@ -32,14 +32,13 @@ considering the initial commit for app
  
  -employed MOQ for testing support
 
-#Installation 
+# Installation 
+
  #Please follow the video in the repo for installaion and used the link below for .net core environment
- 
- video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
- 
+
  #video Instructions/Demo
  
- ![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)ttps://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4)
+ video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
  
  
  

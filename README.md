@@ -40,14 +40,16 @@ considering the initial commit for app
 
 # Installation 
 
- #Please follow the video in the repo for installaion and used the link below for .net core environment
+ #Please follow the video in the repo for installaion
 
  #video Instructions/Demo
  
  video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
  
  
- 
+# Please Make sure .net Core  is installed on system , used the link below for .net core environment as per the O.S
+
+
 Windows
 
 https://dotnet.microsoft.com/download

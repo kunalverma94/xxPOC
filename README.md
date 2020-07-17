@@ -11,8 +11,10 @@ For Maintainability and Scalability following design  patterns SOLID principals 
 3. Adapter Pattern
 5.	Repository Like Pattern
 6. Dependency INjection (IOC)
-Further distributed of DTO ,modules into NuGet or standard DLL could be done ..Limited by Time.
+7. Further distributed of DTO ,modules into NuGet or standard DLL could be done ..Limited by Time.
 though such a simple functionality could be implemented in  coople of lines ,
+
+EG :(https://www.nuget.org/packages/ConsoleTimeOutReader/)
 
 -But this initial investment provide long maintaiable  code.
 
@@ -53,7 +55,7 @@ https://docs.microsoft.com/en-us/dotnet/core/install/linux
 
 Please add the executable to the OS Environment  for CLI.
 
-Please follow vide for installation
+Please follow video for installation
 ![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)
 
 

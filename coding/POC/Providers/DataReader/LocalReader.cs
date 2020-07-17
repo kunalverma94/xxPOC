@@ -17,16 +17,25 @@ namespace ConsoleApp4.DataProvider
         /// <inheritdoc/>
         public override IEnumerable<T> Read()
         {
-            this._connectionPoint.ConnectionString = CrossOSFix(this._connectionPoint.ConnectionString);
-            var data = File.ReadAllText(this._connectionPoint.ConnectionString);
+            string data = GetRawData();
+
             return this._serializable.GetObject<IEnumerable<T>>(data);
         }
 
+        /// <inheritdoc/>
         public override W Read<W>()
+        {
+            string data = GetRawData();
+
+            return this._serializable.GetObject<W>(data);
+        }
+
+        /// <inheritdoc/>
+        private string GetRawData()
         {
             this._connectionPoint.ConnectionString = CrossOSFix(this._connectionPoint.ConnectionString);
             var data = File.ReadAllText(this._connectionPoint.ConnectionString);
-            return this._serializable.GetObject<W>(data);
+            return data;
         }
 
         /// <summary>
@@ -37,8 +46,7 @@ namespace ConsoleApp4.DataProvider
         /// <returns></returns>
         private string CrossOSFix(string location)
         {
-            string _location = location;
-
+            string _location;
             if (File.Exists(location))
             {
                 _location = location;

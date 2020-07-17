@@ -18,24 +18,16 @@ namespace ConsoleApp4
         public static IBaseService AppFactoryInstance(IRequest request)
         {
             IBaseService baseService = null;
-            IBaseConfig config = ConfigFactory.GetConfig(request.Clients);
-
+            IDefaultConfig config = DefaultConfigFactory.GetDefaultConfig(request.Clients);
             IUnityContainer container = GetContainer(request, config);
+
             switch (request.Clients)
             {
                 case Client.Capterra:
-
-                //Data Layer
-                container.RegisterType<IDataRepository<CapterraDTO>, CapteerDataRepository>();
-                //InputOutput Layer
-                container.RegisterType<IDataSourceReader<CapterraDTO>, LocalReader<CapterraDTO>>();
-
-                baseService = container.Resolve<CapterraService>();
+                    baseService = GetCapterraService(container);
                 break;
                 case Client.SoftwareAdvice:
-                container.RegisterType<IDataRepository<SoftwareAdviceDTO>, SoftwareAdviceDataRepository>()
-                .RegisterType<IDataSourceReader<SoftwareAdviceDTO>, LocalReader<SoftwareAdviceDTO>>();
-                baseService = container.Resolve<SoftwareAdviceService>();
+                    baseService = GetSoftwareAdService(container);
                 break;
                 case Client.INVALID:
                 default:
@@ -45,7 +37,29 @@ namespace ConsoleApp4
             return baseService;
         }
 
-        private static IUnityContainer GetContainer(IRequest request, IBaseConfig config)
+        #region Helper methods
+        private static IBaseService GetSoftwareAdService(IUnityContainer container)
+        {
+            IBaseService baseService;
+            container.RegisterType<IDataRepository<SoftwareAdviceDTO>, SoftwareAdviceDataRepository>()
+                .RegisterType<IDataSourceReader<SoftwareAdviceDTO>, LocalReader<SoftwareAdviceDTO>>();
+            baseService = container.Resolve<SoftwareAdviceService>();
+            return baseService;
+        }
+
+        private static IBaseService GetCapterraService(IUnityContainer container)
+        {
+            IBaseService baseService;
+            //Data Layer
+            container.RegisterType<IDataRepository<CapterraDTO>, CapteerDataRepository>();
+            //InputOutput Layer
+            container.RegisterType<IDataSourceReader<CapterraDTO>, LocalReader<CapterraDTO>>();
+            //service layer
+            baseService = container.Resolve<CapterraService>();
+            return baseService;
+        }
+
+        private static IUnityContainer GetContainer(IRequest request, IDefaultConfig config)
         {
             IUnityContainer container = new UnityContainer();
             container
@@ -53,6 +67,7 @@ namespace ConsoleApp4
             .RegisterInstance<IConnection>(new Connection(request.FilePath));
             return container;
         }
+        #endregion
     }
 }
 

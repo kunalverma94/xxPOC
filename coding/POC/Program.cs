@@ -24,7 +24,6 @@ namespace ConsoleApp4
             }
             catch (Exception r)
             {
-                Console.WriteLine(r.Message);
                 Console.WriteLine(AppSetting.HELPTEXT);
             }
         }

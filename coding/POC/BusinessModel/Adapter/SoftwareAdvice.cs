@@ -26,7 +26,6 @@ namespace ConsoleApp4.Models.DTO.Adapter
         }
 
         ///<inheritdoc/>
-
         public override string Twitter
         {
             get

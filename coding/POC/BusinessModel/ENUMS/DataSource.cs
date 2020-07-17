@@ -3,7 +3,7 @@
     /// <summary>
     /// Available ReadSource 
     /// </summary>
-    public enum ReadSource
+    public enum DataSource
     {
         Invalid, LOCAL, WEB, NETWORK, OTHER, MONGODB
     }

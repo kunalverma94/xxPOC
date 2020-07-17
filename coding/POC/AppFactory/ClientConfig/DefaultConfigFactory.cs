@@ -3,16 +3,16 @@ using System;
 
 namespace poc.AppFactory.ClientConfig
 {
-    public static class ConfigFactory
+    public static class DefaultConfigFactory
     {
-        public static IBaseConfig GetConfig(Client client)
+        public static IDefaultConfig GetDefaultConfig(Client client)
         {
             switch (client)
             {
                 case Client.Capterra:
-                return new CapteeraConfig();
+                return new CapteeraDefaultConfig();
                 case Client.SoftwareAdvice:
-                return new SoftwareAdviceConfig();
+                return new SoftwareAdviceDefaultConfig();
                 default:
                 case Client.INVALID:
                 throw new NotImplementedException();

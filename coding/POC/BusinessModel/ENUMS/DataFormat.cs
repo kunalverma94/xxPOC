@@ -3,7 +3,7 @@
     /// <summary>
     /// Available input types
     /// </summary>
-    public enum FileFormats
+    public enum DataFormat
     {
         INVALID,
         YAML,

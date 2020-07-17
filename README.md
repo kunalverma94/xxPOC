@@ -108,7 +108,7 @@ o	3  level
 
 	Data Layer
 
-	Reader Layer (lower level  dealing with files, networks and stuff)
+	Repository Layer (lower level  dealing with files, networks and stuff)
 
 •	Tries to Support  “O” For open close
 

@@ -21,16 +21,21 @@ namespace ConsoleApp4
             IBaseConfig config = ConfigFactory.GetConfig(request.Clients);
 
             IUnityContainer container = GetContainer(request, config);
-
             switch (request.Clients)
             {
                 case Client.Capterra:
-                    container.RegisterType<IDataRepository<ICapterraDTO>, CapteerDataRepository>();
-                    baseService = container.Resolve<CapterraService>();
+
+                //Data Layer
+                container.RegisterType<IDataRepository<CapterraDTO>, CapteerDataRepository>();
+                //InputOutput Layer
+                container.RegisterType<IDataSourceReader<CapterraDTO>, LocalReader<CapterraDTO>>();
+
+                baseService = container.Resolve<CapterraService>();
                 break;
                 case Client.SoftwareAdvice:
-                    container.RegisterType<IDataRepository<ISoftwareAdviceDTO>, SoftwareAdviceDataRepository>();
-                    baseService = container.Resolve<SoftwareAdviceService>();
+                container.RegisterType<IDataRepository<SoftwareAdviceDTO>, SoftwareAdviceDataRepository>()
+                .RegisterType<IDataSourceReader<SoftwareAdviceDTO>, LocalReader<SoftwareAdviceDTO>>();
+                baseService = container.Resolve<SoftwareAdviceService>();
                 break;
                 case Client.INVALID:
                 default:
@@ -43,9 +48,9 @@ namespace ConsoleApp4
         private static IUnityContainer GetContainer(IRequest request, IBaseConfig config)
         {
             IUnityContainer container = new UnityContainer();
-            container.RegisterInstance<IRequest>(request)
-            .RegisterInstance<IReader>(ReaderFactory.GetReader(config.ReadSource))
-            .RegisterInstance<IProductSerializer>(SerializerFactory.GetSerializer(config.FileFormats));
+            container
+            .RegisterInstance<IProductSerializer>(SerializerFactory.GetSerializer(config.FileFormats))
+            .RegisterInstance<IConnection>(new Connection(request.FilePath));
             return container;
         }
     }

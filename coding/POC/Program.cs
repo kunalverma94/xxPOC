@@ -11,7 +11,7 @@ namespace ConsoleApp4
         static void Main(string[] args)
         {
             // args = new string[] { "Capterra", "feed-products/capterra.yaml" };
-            // args = new string[] { "softwareadvice", "feed-products/softwareadvice.json" };
+            args = new string[] { "softwareadvice", "feed-products/softwareadvice.json" };
 
             try
             {
@@ -22,8 +22,9 @@ namespace ConsoleApp4
                     .ToList()
                     .ForEach(a => a.BeginImport());
             }
-            catch (Exception)
+            catch (Exception r)
             {
+                Console.WriteLine(r.Message);
                 Console.WriteLine(AppSetting.HELPTEXT);
             }
         }

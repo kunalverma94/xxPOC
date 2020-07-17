@@ -17,11 +17,11 @@ namespace UnitTestProject1
         public void Should_RETUR_Products()
         {
             //Arange
-            var mocRequestContext = new Mock<IDataRepository<ICapterraDTO>>();
+            var mocRequestContext = new Mock<IDataRepository<CapterraDTO>>();
             var capterraDTOs = (new List<CapterraDTO>() {
             new CapterraDTO(){name="www",tags="xx,ww",twitter="" },
             new CapterraDTO(){name="www",tags="xx,ww",twitter="" }
-            }).Select(a => (ICapterraDTO)a);
+            });
             mocRequestContext.Setup(a => a.GetProducts()).Returns(capterraDTOs);
 
             //Act
@@ -37,11 +37,11 @@ namespace UnitTestProject1
         public void Should_RETUR_Products_Software()
         {
             //Arange
-            var mocRequestContext = new Mock<IDataRepository<ISoftwareAdviceDTO>>();
+            var mocRequestContext = new Mock<IDataRepository<SoftwareAdviceDTO>>();
             var SoftwareAWaDTOs = (new List<SoftwareAdviceDTO>() {
             new SoftwareAdviceDTO(){Title="www",Twitter="" },
             new SoftwareAdviceDTO(){Title="www" }
-            }).Select(a => (ISoftwareAdviceDTO)a);
+            });
             mocRequestContext.Setup(a => a.GetProducts()).Returns(SoftwareAWaDTOs);
 
             //Act

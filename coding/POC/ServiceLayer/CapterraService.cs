@@ -10,9 +10,9 @@ namespace ConsoleApp4.Providers
     /// <inheritdoc/>
     public class CapterraService : IBaseService
     {
-        private readonly IDataRepository<ICapterraDTO> _dataRepository;
+        private readonly IDataRepository<CapterraDTO> _dataRepository;
 
-        public CapterraService(IDataRepository<ICapterraDTO> dataRepository)
+        public CapterraService(IDataRepository<CapterraDTO> dataRepository)
         {
             _dataRepository = dataRepository;
 

@@ -27,7 +27,7 @@ namespace ConsoleApp4.Models
         /// </summary>
         public static string HELPTEXT = @$"Please check the CLI syntax:   poc <SITE> <PRODUCT_CATALOG> 
             <SITE> := {string.Join(",", Enum.GetNames(typeof(Client)))}
-            <PRODUCT_CATALOG> :=Valid file Location"+Environment.NewLine+
+            <PRODUCT_CATALOG> :=Valid file Location" + Environment.NewLine +
             "Incase Of Absolute Path please provire with \" <Path To file > \" ";
     }
 }

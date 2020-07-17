@@ -1,17 +1,32 @@
-﻿using System;
+﻿using ConsoleApp4.Providerrs;
+using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ConsoleApp4.DataProvider
 {
 
     /// <inheritdoc/>
-    public class LocalReader : IReader
+    public class LocalReader<T> : DataSourceReader<T>, IDataSourceReader<T> where T : class
     {
-        /// <inheritdoc/>
-        public string Read(string location)
+        public LocalReader(IConnection connectionPoint, IProductSerializer serializable) : base(connectionPoint, serializable)
         {
-            location = CrossOSFix(location);
-            return File.ReadAllText(location);
+
+        }
+
+        /// <inheritdoc/>
+        public override IEnumerable<T> Read()
+        {
+            this._connectionPoint.ConnectionString = CrossOSFix(this._connectionPoint.ConnectionString);
+            var data = File.ReadAllText(this._connectionPoint.ConnectionString);
+            return this._serializable.GetObject<IEnumerable<T>>(data);
+        }
+
+        public override W Read<W>()
+        {
+            this._connectionPoint.ConnectionString = CrossOSFix(this._connectionPoint.ConnectionString);
+            var data = File.ReadAllText(this._connectionPoint.ConnectionString);
+            return this._serializable.GetObject<W>(data);
         }
 
         /// <summary>

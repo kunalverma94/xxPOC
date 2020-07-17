@@ -5,6 +5,6 @@
     /// </summary>
     public enum ReadSource
     {
-        Invalid, LOCAL, WEB, NETWORK, OTHER
+        Invalid, LOCAL, WEB, NETWORK, OTHER, MONGODB
     }
 }

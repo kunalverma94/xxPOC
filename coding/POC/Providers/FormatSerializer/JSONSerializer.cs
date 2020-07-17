@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Text.Json;
+﻿using System.Text.Json;
 namespace ConsoleApp4.Providerrs
 {
     /// <inheritdoc/>
@@ -15,7 +14,7 @@ namespace ConsoleApp4.Providerrs
         public T GetObject<T>(string data)
         {
 
-            return JObject.Parse(data).ToObject<T>();
+            return JsonSerializer.Deserialize<T>(data, jsonSerializerOptions);
 
         }
     }

@@ -8,4 +8,9 @@ namespace ConsoleApp4.DTO.SoftwareAdvice
         public string Title { get; set; }
         public string Twitter { get; set; }
     }
+
+    public class SoftwareAdviceListDTO
+    {
+        public IEnumerable<SoftwareAdviceDTO> Products { get; set; }
+    }
 }

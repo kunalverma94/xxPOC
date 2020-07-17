@@ -10,9 +10,9 @@ namespace ConsoleApp4.Providers
     /// <inheritdoc/>
     public class SoftwareAdviceService : IBaseService
     {
-        private readonly IDataRepository<ISoftwareAdviceDTO> _dataRepository;
+        private readonly IDataRepository<SoftwareAdviceDTO> _dataRepository;
 
-        public SoftwareAdviceService(IDataRepository<ISoftwareAdviceDTO> dataRepository)
+        public SoftwareAdviceService(IDataRepository<SoftwareAdviceDTO> dataRepository)
         {
             _dataRepository = dataRepository;
 

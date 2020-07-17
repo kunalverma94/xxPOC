@@ -15,7 +15,6 @@ namespace ConsoleApp4.Providers
         public SoftwareAdviceService(IDataRepository<SoftwareAdviceDTO> dataRepository)
         {
             _dataRepository = dataRepository;
-
         }
 
         public IEnumerable<IProducts> GetProducts()

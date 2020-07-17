@@ -15,7 +15,6 @@ namespace ConsoleApp4.Providers
         public CapterraService(IDataRepository<CapterraDTO> dataRepository)
         {
             _dataRepository = dataRepository;
-
         }
 
         public IEnumerable<IProducts> GetProducts()

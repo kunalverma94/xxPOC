@@ -35,7 +35,12 @@ considering the initial commit for app
 #Installation 
  #Please follow the video in the repo for installaion and used the link below for .net core environment
  
- vido:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
+ video:https://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4
+ 
+ #video Instructions/Demo
+ 
+ ![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)ttps://raw.githubusercontent.com/kunalverma94/POC/master/coding/Demo.mp4)
+ 
  
  
 Windows
@@ -47,7 +52,10 @@ Linux
 
 https://docs.microsoft.com/en-us/dotnet/core/install/linux
 
-Please add the executable to the OS Environment  for CLI
+Please add the executable to the OS Environment  for CLI.
+
+Please follow vide for installation
+![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)
 
 
 #

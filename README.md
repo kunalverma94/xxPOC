@@ -1,6 +1,11 @@
 # POC:Proof Of Concept
 Feed-products: POC
 
+#SQL Solution
+
+https://raw.githubusercontent.com/kunalverma94/POC/master/database/POCanswer.sql
+
+
 # Prerequisites
 
 ![alt text](https://raw.githubusercontent.com/kunalverma94/POC/master/coding/img.jpg)

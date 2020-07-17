@@ -39,8 +39,8 @@ namespace UnitTestProject1
             //assert
             Assert.IsInstanceOfType(result, typeof(SoftwareAdviceService));
             Assert.IsNotNull(result);
-        }        
-        
+        }
+
         [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
         public void Should_RETURN_Error()

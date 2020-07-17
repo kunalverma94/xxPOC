@@ -1,19 +1,16 @@
-﻿using ConsoleApp4;
-using ConsoleApp4.DataProvider;
+﻿using ConsoleApp4.DataProvider;
 using ConsoleApp4.DTO.Capterra;
 using ConsoleApp4.DTO.SoftwareAdvice;
-using ConsoleApp4.Models.DTO.Request;
 using ConsoleApp4.Providers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTestProject1
 {
     [TestClass]
-   public class DataServiceTest
+    public class DataServiceTest
     {
 
         [TestMethod]

@@ -20,27 +20,33 @@ namespace ConsoleApp4
             IBaseService baseService = null;
             IBaseConfig config = ConfigFactory.GetConfig(request.Clients);
 
-            IUnityContainer container = new UnityContainer();
-            container.RegisterInstance<IRequest>(request)
-            .RegisterInstance<IReader>(ReaderFactory.GetReader(config.ReadSource))
-            .RegisterInstance<IProductSerializer>(SerializerFactory.GetSerializer(config.FileFormats));
+            IUnityContainer container = GetContainer(request, config);
 
             switch (request.Clients)
             {
                 case Client.Capterra:
-
-                container.RegisterType<IDataRepository<ICapterraDTO>, CapteerDataRepository>();
-                baseService = container.Resolve<CapterraService>();
+                    container.RegisterType<IDataRepository<ICapterraDTO>, CapteerDataRepository>();
+                    baseService = container.Resolve<CapterraService>();
                 break;
                 case Client.SoftwareAdvice:
-                container.RegisterType<IDataRepository<ISoftwareAdviceDTO>, SoftwareAdviceDataRepository>();
-                baseService = container.Resolve<SoftwareAdviceService>();
+                    container.RegisterType<IDataRepository<ISoftwareAdviceDTO>, SoftwareAdviceDataRepository>();
+                    baseService = container.Resolve<SoftwareAdviceService>();
                 break;
                 case Client.INVALID:
                 default:
                 throw new NotImplementedException();
             }
+
             return baseService;
+        }
+
+        private static IUnityContainer GetContainer(IRequest request, IBaseConfig config)
+        {
+            IUnityContainer container = new UnityContainer();
+            container.RegisterInstance<IRequest>(request)
+            .RegisterInstance<IReader>(ReaderFactory.GetReader(config.ReadSource))
+            .RegisterInstance<IProductSerializer>(SerializerFactory.GetSerializer(config.FileFormats));
+            return container;
         }
     }
 }

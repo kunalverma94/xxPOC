@@ -22,9 +22,18 @@ namespace ConsoleApp4.DataProvider
         /// <returns></returns>
         private string CrossOSFix(string location)
         {
-            return Path.Join(Environment.CurrentDirectory, location)
-                                        .Replace('/', Path.DirectorySeparatorChar)
-                                        .Replace('\\', Path.DirectorySeparatorChar);
+            string _location = location;
+
+            if (File.Exists(location))
+            {
+                _location = location;
+            }
+            else
+            {
+                _location = Path.Join(Environment.CurrentDirectory, location);
+            }
+
+            return _location.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar);
         }
     }
 }

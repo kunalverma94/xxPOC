@@ -40,6 +40,8 @@ Syntax
 #Proof of Concept:
 
 The application developed in .net Core 3.1.
+#Adding New clients and DataFormats like csv,json,xml etc are all configurable :Just implement necessary Interface and you all good to go
+
 
 For Maintainability and Scalability following design  patterns SOLID principals have been added as Of current Implementation
 
@@ -106,7 +108,7 @@ o	3  level
 
 	Data Layer
 
-	Reader Layer (lower level  dealing with files, networks and stuff)
+	Repository Layer (lower level  dealing with files, networks and stuff)
 
 •	Tries to Support  “O” For open close
 
